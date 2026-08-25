@@ -1,0 +1,145 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui;
+  color: #eaf2f0;
+  background: #07110f;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 0%, #183b34, #07110f 42%);
+}
+button,
+input {
+  font: inherit;
+}
+.diagnostics {
+  width: min(1120px, calc(100% - 48px));
+  margin: auto;
+  padding: 56px 0;
+}
+header {
+  margin-bottom: 32px;
+}
+h1 {
+  font-size: clamp(2.6rem, 6vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  margin: 8px 0 18px;
+}
+h2 {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9cbab3;
+}
+.eyebrow {
+  color: #72e2bd;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+section {
+  border: 1px solid #24423c;
+  border-radius: 16px;
+  background: #091b17c7;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto auto;
+  gap: 12px;
+  align-items: end;
+}
+label {
+  display: grid;
+  gap: 7px;
+  color: #9cbab3;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+input {
+  color: #fff;
+  background: #07110f;
+  border: 1px solid #31534b;
+  border-radius: 8px;
+  padding: 11px;
+}
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: #65ddb7;
+  color: #07110f;
+  font-weight: 800;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+.secondary {
+  color: #cfe0dc;
+  background: #1b3832;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.grid section {
+  margin-bottom: 20px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  display: grid;
+  gap: 5px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1f3a34;
+}
+code,
+small,
+.muted {
+  color: #82aaa0;
+}
+dl {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 12px;
+}
+dd {
+  margin: 0;
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #71817d;
+  margin-right: 10px;
+}
+.dot.connected {
+  background: #64e5b8;
+  box-shadow: 0 0 14px #64e5b8;
+}
+.dot.error {
+  background: #ff766d;
+}
+.error {
+  color: #ff938b;
+}
+@media (max-width: 760px) {
+  .grid,
+  .controls {
+    grid-template-columns: 1fr;
+  }
+  .diagnostics {
+    width: calc(100% - 24px);
+  }
+}

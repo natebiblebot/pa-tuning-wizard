@@ -1,0 +1,10 @@
+dist
+node_modules
+src-tauri/target
+src-tauri/gen
+package-lock.json
+docs/ARCHITECTURE.md
+docs/CODEX_FIRST_TASK.md
+docs/ISOLATION_GUARDRAILS.md
+docs/MILESTONES.md
+docs/PRODUCT_SPEC.md
