@@ -1,0 +1,411 @@
+:root {
+  font-family: "Segoe UI Variable", "Bahnschrift", sans-serif;
+  color: #e8edf2;
+  background: #09111c;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 2%) 1px, transparent 1px) 0 0 /
+      40px 40px,
+    radial-gradient(circle at 8% 0%, #1b3345 0, transparent 38%),
+    #09111c;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+.file-control {
+  border: 1px solid #526273;
+  border-radius: 4px;
+  padding: 10px 15px;
+  background: #172535;
+  color: #eef3f7;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+.file-control:hover {
+  border-color: #f2ad3d;
+}
+
+button:focus-visible,
+input:focus-visible,
+.file-control:focus-within,
+summary:focus-visible {
+  outline: 2px solid #57c7d4;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.measurements-screen {
+  width: min(1480px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 38px 0 64px;
+}
+
+.console-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: #78a2b6;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(2.3rem, 5.5vw, 5.1rem);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.capture-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.file-control {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.file-control input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.stop-button {
+  border-color: #ef6f6c;
+  color: #ffb1ae;
+}
+
+.recording-dot,
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #6f7d8b;
+}
+
+.recording-dot {
+  background: #ef6f6c;
+  box-shadow: 0 0 12px #ef6f6c;
+}
+
+.source-console,
+.plot-shell,
+.protocol-diagnostics {
+  border: 1px solid #2b3c4e;
+  border-radius: 7px;
+  background: rgb(13 25 39 / 92%);
+  box-shadow: 0 18px 50px rgb(0 0 0 / 22%);
+}
+
+.source-console {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  margin-bottom: 18px;
+  padding: 16px;
+}
+
+.source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.source-row {
+  display: grid;
+  grid-template-columns: minmax(90px, auto) auto auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 11px;
+  border-left: 3px solid #f2ad3d;
+  background: #152332;
+}
+
+.source-row > span {
+  font-weight: 800;
+}
+
+.source-row label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: #9fb0bf;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.source-empty {
+  margin: 10px;
+  color: #8fa2b2;
+}
+
+.measurement-readouts {
+  display: flex;
+  gap: 8px;
+}
+
+.measurement-readouts span {
+  display: grid;
+  min-width: 150px;
+  padding: 7px 11px;
+  color: #8295a6;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.measurement-readouts strong {
+  margin-top: 5px;
+  color: #e6edf2;
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.plot-shell {
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: #d9d6c6;
+}
+
+.plot-shell--dominant {
+  border-top: 3px solid #f2ad3d;
+}
+
+.plot-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 14px;
+  border-bottom: 1px solid #a9a99d;
+  color: #182433;
+  background: #c9c7b9;
+}
+
+.plot-heading h2 {
+  margin: 0;
+  font-family: "Arial Narrow", "Segoe UI Variable", sans-serif;
+  font-size: 0.83rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.plot-heading span {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.7rem;
+}
+
+.measurement-plot,
+.measurement-plot--dominant {
+  display: block;
+  width: 100%;
+  height: auto;
+  background:
+    linear-gradient(rgb(22 36 51 / 5%) 1px, transparent 1px) 0 0 / 100% 25%,
+    #dedbca;
+}
+
+.plot-grid line {
+  stroke: #8c918b;
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+
+.axis-label {
+  fill: #3f4c51;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 15px;
+}
+
+.plot-empty {
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  color: #596364;
+  font-family: Consolas, "Cascadia Mono", monospace;
+}
+
+.plot-shell--dominant .plot-empty {
+  min-height: 360px;
+}
+
+.secondary-plots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.protocol-diagnostics {
+  margin-top: 4px;
+  color: #c5d0da;
+}
+
+.protocol-diagnostics summary {
+  padding: 15px 18px;
+  color: #9db0c0;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  cursor: pointer;
+}
+
+.dot.connected {
+  background: #57c7d4;
+  box-shadow: 0 0 10px #57c7d4;
+}
+
+.dot.error {
+  background: #ef6f6c;
+}
+
+.diagnostics-body {
+  padding: 4px 18px 18px;
+}
+
+.connection-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.connection-controls label {
+  display: grid;
+  gap: 5px;
+  color: #8ea1b2;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.connection-controls input {
+  width: 100%;
+  border: 1px solid #3a4c5e;
+  border-radius: 3px;
+  padding: 10px;
+  color: #edf2f5;
+  background: #08111b;
+}
+
+.secondary {
+  color: #b7c5d1;
+  background: #101c29;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.76rem;
+}
+
+dt {
+  color: #8194a4;
+}
+
+dd {
+  margin: 0;
+}
+
+pre,
+.error {
+  color: #ffaaa6;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+  .console-header,
+  .source-console {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .measurement-readouts {
+    flex-wrap: wrap;
+  }
+
+  .connection-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .measurements-screen {
+    width: calc(100% - 20px);
+    padding-top: 24px;
+  }
+
+  .capture-controls,
+  .secondary-plots,
+  .connection-controls {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .secondary-plots {
+    display: grid;
+  }
+
+  .source-row {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .recording-dot {
+    animation: recording-pulse 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes recording-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
